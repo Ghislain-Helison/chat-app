@@ -48,7 +48,7 @@ export function Chat() {
       <ChatSidebar setCurrentUser={setCurrentUser} onChatUserChange={handleChatUserChange}/>
       <div className="flex flex-col flex-1">
         <ChatTopbar currentChatUser={currentChatUser} />
-        <ChatList messages={messages} />
+        <ChatList messages={messages} currentUser={currentUser}/>
         <ChatBottombar
           sendMessage={sendMessage}
           currentUser={currentUser} // Passer le nom d'utilisateur à ChatBottombar

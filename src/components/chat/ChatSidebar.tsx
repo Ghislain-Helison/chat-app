@@ -12,11 +12,13 @@ export function ChatSidebar({ setCurrentUser, onChatUserChange }: SidebarProps) 
   };
 
   return (
-    <div className="bg-gray-200 p-4">
+    <div className="bg-gray-200 p-4 min-w-56">
       {/* Contenu de la sidebar */}
       <p>Sidebar Content</p>
-      <button onClick={() => handleUserChange("User1")}>Switch to User1</button>
-      <button onClick={() => handleUserChange("User2")}>Switch to User2</button>
+      <div className="flex flex-col">
+        <button onClick={() => handleUserChange("User1")}>Switch to User1</button>
+        <button onClick={() => handleUserChange("User2")}>Switch to User2</button>
+      </div>
     </div>
   );
 }
