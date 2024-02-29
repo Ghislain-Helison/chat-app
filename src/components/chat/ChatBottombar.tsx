@@ -10,16 +10,17 @@ interface Message {
 
 interface ChatBottombarProps {
   sendMessage: (newMessage: Message) => void;
+  currentUser: string; // Ajouter la prop pour le nom d'utilisateur
 }
 
-export function ChatBottombar({ sendMessage }: ChatBottombarProps) {
+export function ChatBottombar({ sendMessage, currentUser }: ChatBottombarProps) {
   const [message, setMessage] = useState("");
 
   const handleSend = () => {
     if (message.trim() !== "") {
       const newMessage: Message = {
         id: Date.now(),
-        sender: "User",
+        sender: currentUser,
         text: message.trim(),
       };
       sendMessage(newMessage);
@@ -32,12 +33,10 @@ export function ChatBottombar({ sendMessage }: ChatBottombarProps) {
       <Textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Type your message..."
+        placeholder={`Type your message as ${currentUser}...`}
         className="flex-1 border p-2 mr-2"
       />
-      <Button onClick={handleSend} >
-        Send
-      </Button>
+      <Button onClick={handleSend}>Send</Button>
     </div>
   );
 }

@@ -14,7 +14,7 @@ interface ChatListProps {
 
 export function ChatList({ messages }: ChatListProps) {
   return (
-    <div className="flex-1 ">
+    <div className="flex-1 overflow-y-auto p-4">
         <h3>Chat list</h3>
       {messages.map((message) => (
         <div key={message.id} className="mb-2">
