@@ -18,6 +18,7 @@ export function ChatSidebar({ setCurrentUser, onChatUserChange }: SidebarProps) 
       <div className="flex flex-col">
         <button onClick={() => handleUserChange("User1")}>Switch to User1</button>
         <button onClick={() => handleUserChange("User2")}>Switch to User2</button>
+        <button onClick={() => handleUserChange("User3")}>Switch to User3</button>
       </div>
     </div>
   );

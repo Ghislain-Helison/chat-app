@@ -15,7 +15,7 @@ interface Message {
 export function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentUser, setCurrentUser] = useState<string>("User1");//Ajout de state pour l'utilisateur connecte actuel
-  const [currentChatUser, setCurrentChatUser] = useState<string>("User1"); // Ajout du state pour l'utilisateur de discussion actuel
+  const [currentChatUser, setCurrentChatUser] = useState<string>("User2"); // Ajout du state pour l'utilisateur de discussion actuel
 
   const sendMessage = (newMessage: Message) => {
     setMessages([...messages, newMessage]);
